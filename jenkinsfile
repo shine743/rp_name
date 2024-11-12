@@ -16,7 +16,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 // 배포
-                sh 'docker push myapp:${BUILD_NUMBER}'
+                sh 'docker push localhost:5000/myapp:${BUILD_NUMBER}'
             }
         }
     }
