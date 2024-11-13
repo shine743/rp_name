@@ -10,7 +10,7 @@ pipeline {
         stage('Run Docker Container') {
             steps {
                 // Docker 컨테이너 실행
-                sh 'docker run --name my-container -d myapp:${BUILD_NUMBER} ./hello.py'
+                sh 'docker run --name my-container -d -p 5000:5000 myapp:${BUILD_NUMBER} ./hello.py'
             }
         }
         stage('Deploy') {
