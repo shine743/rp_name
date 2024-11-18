@@ -6,4 +6,4 @@ run pip install --no-cache-dir flask
 # 컨테이너에 배치할 파일
 copy ./hello.py /hello.py
 # 컨테이너 실행하고 실행될 명령어
-cmd ["python3", "hello.py"]
+cmd ["python3", "-m", "flask", "run", "--host=0.0.0.0"]
