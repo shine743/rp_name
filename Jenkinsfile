@@ -1,10 +1,14 @@
 pipeline {
     agent any
     stages {
-        stage('Build') {
+        stage('nodejs test') {
             steps {
-                // 빌드
-                sh 'docker build -t myapp .'
+                sh 'node --version'
+            }
+        }
+        stage('xcode test') {
+            steps {
+                sh 'xcodebuild -version'
             }
         }
     }
