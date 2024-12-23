@@ -1,6 +1,12 @@
 pipeline {
     agent none
     stages {
+        stage('git test') {
+            agent any
+            steps {
+                sh 'git --version'
+            }
+        }
         stage('nodejs test') {
             agent { label 'nodejs'}
             steps {
